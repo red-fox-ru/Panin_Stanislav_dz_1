@@ -28,17 +28,12 @@ def main():
         print('Число меньше нуля')
     elif duration < 60:
         print(f'{sec} сек')
+    elif duration < hour_sec:
+        print(f'{mint} мин, {sec} сек')
     elif duration < day_sec:
-        hour = duration
-
-#
-#    elif duration >= 60 and duration < 3600:
-#        min = duration//full_step_clock
-#        sec = duration%full_step_clock
-#    elif duration >= 3600 and duration < 216000:
-#        hour = duration//full_step_clock
-#        min = (duration % full_step_clock) // full_step_clock
-#        sec = (duration % full_step_clock) % full_step_clock
+        print(f'{hour} час, {mint} мин, {sec} сек')
+    elif duration >= day_sec:
+        print(f'{days} дн, {hour} час, {mint} мин, {sec} сек')
 
 
 if __name__ == '__main__':
