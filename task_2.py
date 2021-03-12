@@ -4,7 +4,7 @@
 
 
 generate_odd = [i for i in range(1, 1000) if i % 2 != 0]
-odd_cube = [el**3 for el in generate_odd]
+odd_cube = [el ** 3 for el in generate_odd]
 
 
 def sum_num(number):
@@ -25,21 +25,24 @@ def sample_sum_num(list_num, number):
     return result
 
 
-def main():
+def main(first_list):
     print('Список состоящий из кубов нечётных чисел:')
-    print(odd_cube)
-    res_list = sample_sum_num(odd_cube, 7)
+    print(first_list)
+    res_list = sample_sum_num(first_list, 7)
     print('Список из сумм цифр которых делится на 7 без остатка: ')
     print(res_list)
     print('Сумма чисел из списка: ')
-    print(sum(res_list))
-    for el in range(0, len(res_list)):
-        res_list[el] += 17
+    print(sum(res_list), '\n')
+    for el in range(0, len(first_list)):
+        first_list[el] += 17
     print('Каждому элементу списка прибавили 17: ')
-    print(res_list)
+    print(first_list)
+    first_list = sample_sum_num(first_list, 7)
+    print('Список из сумм цифр которых делится на 7 без остатка: ')
+    print(first_list)
     print('Сумм чисел из списка: ')
-    print(sum(res_list))
+    print(sum(first_list))
 
 
 if __name__ == '__main__':
-    main()
+    main(odd_cube)
