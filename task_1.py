@@ -10,8 +10,8 @@ month_sec = 2592000
 
 
 def conversion(seconds):
-    month = seconds//month_sec
-    days = (seconds//day_sec) % 31
+    month = seconds // month_sec
+    days = (seconds // day_sec) % 31
     hour = (seconds // hour_sec) % 24
     mint = (seconds // full_step_clock) % full_step_clock
     sec = seconds % full_step_clock
